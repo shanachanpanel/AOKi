@@ -25,7 +25,7 @@ export default function Home() {
 
   const fetchTrendingAnime = async () => {
     try {
-      const fetchingTrendingAnime = await fetch("https://consumet-api-private.vercel.app/meta/anilist/trending?page=1&perPage=12");
+      const fetchingTrendingAnime = await fetch("https://aniyoi-api.vercel.app//meta/anilist/trending?page=1&perPage=12");
       const fetchedTrendingAnime = await fetchingTrendingAnime.json();
       setTrendingAnime(fetchedTrendingAnime.results);
       // console.log(trendingAnime);
@@ -35,7 +35,7 @@ export default function Home() {
       console.log("catch running");
       // Will be Added In Future Update
       //   try {           
-      //     const fetchingTrendingAnime = await fetch("https://consumet-api-private.vercel.app/anime/gogoanime/top-airing?page=1");
+      //     const fetchingTrendingAnime = await fetch("https://aniyoi-api.vercel.app//anime/otakudesu/top-airing?page=1");
       //     const fetchedTrendingAnime = await fetchingTrendingAnime.json();
       //     setTrendingAnime(fetchedTrendingAnime.results);
       //     console.log(trendingAnime);
@@ -66,13 +66,13 @@ export default function Home() {
   }
   let i = 0;
 
-  document.title = "AOKi - Home";
+  document.title = "shana - Home";
 
   useEffect(() => {
     setProgress(0);
     fetchTrendingAnime();
     setProgress(50);
-    // fetchLatestAnime(`https://consumet-api-private.vercel.app/meta/anilist/recent-episodes?page=${latestAnimePageNo}&perPage=14&provider=gogoanime`);
+     fetchLatestAnime(`https://aniyoi-api.vercel.app//meta/anilist/recent-episodes?page=${latestAnimePageNo}&perPage=14&provider=otakudesu`);
     setProgress(100);
     // eslint-disable-next-line
   }, [dataLoading, latestAnimePageNo]);
